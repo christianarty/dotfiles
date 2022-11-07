@@ -1,0 +1,17 @@
+[user]
+  name = Christian Arty
+  email = 40256027+christianarty@users.noreply.github.com
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+  autocrlf = input
+[pull]
+  rebase = true
+[init]
+  defaultBranch = main
+[credential]
+  helper = osxkeychain
+[fetch]
+  prune = true
+[diff]
+  colorMoved = zebra
