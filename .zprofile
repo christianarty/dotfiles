@@ -1,7 +1,7 @@
 export LANG=en_US.UTF-8
 # Homebrew Shim init
 architecture=$(uname -m)
-if [[$architecture -eq "arm64"]]
+if [[ $architecture -eq "arm64" ]]
 then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 else
