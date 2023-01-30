@@ -1,6 +1,7 @@
 [user]
   name = Christian Arty
   email = 40256027+christianarty@users.noreply.github.com
+  signingkey = 64077F495076E76A
 [core]
   editor = vim
   excludesfile = ~/.gitignore
@@ -15,3 +16,10 @@
   prune = true
 [diff]
   colorMoved = zebra
+[commit]
+  gpgsign = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
