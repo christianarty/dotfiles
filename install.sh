@@ -25,12 +25,6 @@ for file in "${files[@]}"; do
   ln -sf "${dotfiledir}/.${file}" "${HOME}/.${file}"
 done
 
-# If the OS is macOS, run the macOS.sh script
-if [[ $(uname -s) == "Darwin" ]]; then
-  echo "Running macOS.sh"
-  zsh "${dotfiledir}/macOS.sh"
-fi
-
 # Setup Git Defaults
 echo "Setting up Git defaults"
 git config --global core.excludesfile "~/.gitignore"
@@ -38,3 +32,9 @@ git config --global core.editor "vim"
 git config --global pull.rebase true
 git config --global fetch.prune true
 git config --global diff.colorMoved zebra
+
+# If the OS is macOS, run the macOS.sh script
+if [[ $(uname -s) == "Darwin" ]]; then
+  echo "Running macOS.sh"
+  zsh "${dotfiledir}/macOS.sh"
+fi
