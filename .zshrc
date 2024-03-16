@@ -17,8 +17,8 @@ else
 fi
 
 # Load dotfiles:
-for file in ~/.{aliases,private}; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file"
+for file in $HOME/.{aliases,private}; do
+  [ -f "$file" ] && source "$file"
 done
 unset file
 
@@ -39,13 +39,11 @@ export PATH="$HOME/bin:$PATH"
 
 PYENV_ROOT="$HOME/.pyenv"
 if [ -d "$PYENV_ROOT" ]; then
-  echo "Found pyenv folder, initalizing pyenv"
   export PYENV_ROOT="$PYENV_ROOT"
   command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
 fi
 
 if which rbenv >/dev/null; then
-  echo "Found rbenv installed on your PATH"
   eval "$(rbenv init - zsh)"
 fi
