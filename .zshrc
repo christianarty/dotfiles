@@ -1,12 +1,20 @@
+# Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-plugins=(git docker docker-compose rust)
+plugins=(git gh docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
 # Tell homebrew to not autoupdate every single time I run it (just once a week).
 export HOMEBREW_AUTO_UPDATE_SECS=604800
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='code'
+fi
 
 # Load dotfiles:
 for file in ~/.{aliases,private}; do
@@ -26,3 +34,18 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Prepend personal binaries on PATH
 export PATH="$HOME/bin:$PATH"
+
+# Load PYENV if its installed
+
+PYENV_ROOT="$HOME/.pyenv"
+if [ -d "$PYENV_ROOT" ]; then
+  echo "Found pyenv folder, initalizing pyenv"
+  export PYENV_ROOT="$PYENV_ROOT"
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
+if which rbenv >/dev/null; then
+  echo "Found rbenv installed on your PATH"
+  eval "$(rbenv init - zsh)"
+fi
