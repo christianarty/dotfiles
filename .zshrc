@@ -2,7 +2,7 @@
 export ZSH="${HOME}/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-plugins=(git gh docker docker-compose)
+plugins=(git gh tmux docker docker-compose z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
