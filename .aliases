@@ -33,6 +33,7 @@ else
     alias lr='ls -ltrh --group-directories-first'
 fi
 
-
+# alias for lazygit
+alias lg="lazygit"
 #Re-source .zshrc
 alias reloadz="source $HOME/.zshrc"
