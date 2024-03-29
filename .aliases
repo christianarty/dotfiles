@@ -35,5 +35,10 @@ fi
 
 # alias for lazygit
 alias lg="lazygit"
-#Re-source .zshrc
+
+# Re-source .zshrc
 alias reloadz="source $HOME/.zshrc"
+
+# Easy way to view a github repo and present
+alias vr="gh repo view --web"
+alias vpr="gh pr view --web"
